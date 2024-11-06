@@ -11,9 +11,9 @@ public class StatisticsOfGrades {
     public static void GradeStatsCalc(Integer[] grades, int studentTotal) {
         var formatter = DecimalFormat.getInstance();
         /*
-          the caller of this method  has to provide an array and a matching size of elements(grades)
-         this is to check and force the caller to match elements with the total elements size
-          it's  essentially a way to prevent any  instance of an array  out of bounds exception;
+        the caller of this method  has to provide an array[grades] and a corresponding size(student total)
+        the if condition is to check and be sure the caller does not cause an ArrayOutOfBoundsException
+         by passing an array of elements that exceeds the corresponding size passed.
          */
         if ((grades.length) == studentTotal) {
             var max = Arrays.stream(grades).max(Integer::compareTo);
@@ -32,12 +32,12 @@ public class StatisticsOfGrades {
              System.out.println("Graph :");
             int maxBarHeight = Arrays.stream(stats).max().orElse(0);
             /*
-              The idea is to  print a  vertical bar and make sure it corresponds
-               to the value of largest element in the stats[] array.
+              The idea is to  print a  vertical bar that corresponds
+               to the value of largest count in the stats[] array.
              The (maxBarHeight) is the highest count from the stats[] array.
                For example, if the largest count in stats[] is 6, then maxBarHeight is 6.
               The i variable controls the current "level" or "row" of the bar graph we’re printing.
-              In the first iteration, i = maxBarHeight (for example, 6).
+              In the first iteration, i = maxBarHeight ( 6>).
              */
 
             for (int i = maxBarHeight; i >= 1; i--) {
@@ -45,9 +45,9 @@ public class StatisticsOfGrades {
                 for (int stat : stats) {
                     /*
                       " Now in this inner loop  we iterate over the  stats array
-                      which contains for instance [23564] and compare it to our row or current level(i),
+                      which contains for instance [23564] and compare it to our row or current level(i).
                        for each of the elements in  [23564], if it  is greater than or equal
-                       to the current  level or row , add a "#" or add empty spaces otherwise.
+                       to the current  level (i) , add a "#" or add empty spaces otherwise.
                        For example if we begin at ith row level  and compare it
                        to the  [23564] , we get an out like this in the
                        first iteration:  i=6
@@ -67,7 +67,7 @@ public class StatisticsOfGrades {
                         System.out.print("          ");
                     }
                 }
-                // move to the next line to print   to begin printing  "#" for the next row or ith level ;
+                // move to the next line to print to begin printing  "#" for the next row or ith level ;
                 System.out.println();
             }
 
