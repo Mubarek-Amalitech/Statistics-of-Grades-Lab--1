@@ -1,12 +1,11 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-
+//
 public class StatisticsOfGrades {
-    /**
+    /** @param  grades
+     * @param  studentTotal
      *
-     * @param grades
-     * @param studentTotal
      */
     public static void GradeStatsCalc(Integer[] grades, int studentTotal) {
         var formatter = DecimalFormat.getInstance();
@@ -39,7 +38,6 @@ public class StatisticsOfGrades {
               The i variable controls the current "level" or "row" of the bar graph we’re printing.
               In the first iteration, i = maxBarHeight ( 6>).
              */
-
             for (int i = maxBarHeight; i >= 1; i--) {
                 System.out.print("   " + i + "  > ");
                 for (int stat : stats) {
@@ -70,9 +68,12 @@ public class StatisticsOfGrades {
                 // move to the next line to print to begin printing  "#" for the next row or ith level ;
                 System.out.println();
             }
-
+            System.out.println("""
+                          +----------+---------+---------+---------+---------+
+                          I    0-20   I  21-40  I  41-60  I  61-80  I  81-100 I
+                    
+                    """);
         } else {
-
             throw new GradesExceedGradesCountException("total number of grades cannot exceed the Student total");
         }
 
