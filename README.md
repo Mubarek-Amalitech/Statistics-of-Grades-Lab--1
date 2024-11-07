@@ -19,5 +19,9 @@ Write a program that reads the grades of `N` students in a class on an assignmen
 - **Create a bar graph** representing the `scores` array. Each bar will be represented by the symbol `#######`, and the grade ranges will be displayed below the graph.
 
 - **Solution Ouput :**
-- ![image](https://github.com/user-attachments/assets/7a2821b1-5784-4450-9007-c07d4af41422)
+- ![Screenshot 2024-11-07 082304](https://github.com/user-attachments/assets/637606ec-adff-44f7-871a-79d7fe755949)
+- **Solution Ouput :**
+- ![image](https://github.com/user-attachments/assets/db5a7143-645b-42f1-b24e-85bf3211fc33)
+
+  
 
